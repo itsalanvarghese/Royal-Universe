@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+
+  .glow {
+    box-shadow: 0 0 15px theme("colors.blue.500"), 0 0 30px theme("colors.teal.500");
+  }
+}
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 214 32% 91%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --accent: 215 25% 27%;
+    --accent-foreground: 210 40% 98%;
+
+    --border: 215 25% 27%;
+    --ring: 215 25% 27%;
+
+    --radius: 0.5rem;
+  }
+
+  html,
+  body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+  }
+
+  #__next {
+    height: 100%;
+  }
+}
+
+/* Add custom font (optional, but enhances the modern look) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@keyframes neon-flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 0.99;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+}
+
+.neon-flicker {
+  animation: neon-flicker 5s infinite alternate;
+}
